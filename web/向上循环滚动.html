@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>每3秒向上滚动</title>
+</head>
+
+<style type="text/css">
+    ._container {
+        height: 36px;
+        overflow: hidden;
+        border-bottom: 1px solid #000;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    ._container li {
+        height: 36px;
+        line-height: 36px;
+        font-size: 18px;
+    }
+
+    ._container li:first-child {
+        margin-top: 0;
+        transition: margin-top .8s;
+    }
+</style>
+
+<body>
+<ul class="_container" id="demo">
+    <li>我是第一个出现的</li>
+    <li>我是第二个出现的</li>
+    <li>我是第三个出现的</li>
+    <li>我是第四个出现的</li>
+    <li>我要开始循环了(第五个)</li>
+</ul>
+
+</body>
+
+<script type="text/javascript">
+    function Scroll() {}
+    Scroll.prototype.upScroll = function(dom, _h, interval) {
+        var dom = document.getElementById(dom);
+        var timer = setTimeout(function() {
+            var _field = dom.firstElementChild;
+            _field.style.marginTop = _h;
+            clearTimeout(timer);
+        }, 1000)
+        setInterval(function() {
+            var _field = dom.firstElementChild;
+            _field.style.marginTop = "0px";
+            dom.appendChild(_field);
+            var _field = dom.firstElementChild
+            _field.style.marginTop = _h;
+        }, interval)
+    }
+    var myScroll = new Scroll();
+
+    /*这是启动方式*/
+    /*
+     * demo 父容器(ul)的id
+     * -36px 子元素li的高度
+     * 3000  滚动间隔时间
+     * 每次滚动持续时间可到css文件中修改
+     */
+    myScroll.upScroll("demo", "-36px", 3000);
+</script>
+</html>

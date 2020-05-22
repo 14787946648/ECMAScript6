@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div class="container-fluid" style="display: block" id="container">
+    <h5 style="color: #bf04f3">
+        <em style="align-content: center">
+            随机生成1~20之间的10个整数，并保存至array数组中：
+        </em>
+    </h5>
+    <h5 id="array" style="color: #cb04f8"></h5>
+    <h5 style="color: dodgerblue">
+        <p>
+            1、找出数组中的最大值和最小值。
+            <button type="button" onclick="Execute('1')">Execute</button>
+            <span id="show01"></span>
+        </p>
+        <p>
+            2、求所有值的和。
+            <button type="button" onclick="Execute('2')">Execute</button>
+            <span id="show02"></span>
+        </p>
+        <p>
+            3、将所有奇数下标对应的元素保存在oddNumber_Index数组中。
+            <button type="button" onclick="Execute('3')">Execute</button>
+            <span id="show03"></span>
+        </p>
+        <p>
+            4、将所有偶数下标对应的元素保存在even_Index数组中。
+            <button type="button" onclick="Execute('4')">Execute</button>
+            <span id="show04"></span>
+        </p>
+        <p>
+            5、随机产生一个数，如果该数与array数组中某个值相同，则复制array数组至newArray数组中，并在newArray数组中将该值删除并返回。
+            <button type="button" onclick="Execute('5')">Execute</button>
+            <span id="show05"></span>
+        </p>
+        <p>
+            6、再次随机产生一个数，如果该数与array数组中某个值相同，则直接删除array数组中的该数，最终返回删除该数过后的array数组。
+            <button type="button" onclick="Execute('6')">Execute</button>
+            <span id="show06"></span>
+        </p>
+        <p>
+            7、删除array数组最后一个元素，不直接修改array数组，结果返回新的数组。
+            <button type="button" onclick="Execute('7')">Execute</button>
+            <span id="show07"></span>
+        </p>
+        <p>
+            8、删除array数组第一个元素，不直接修改array数组，结果返回新的数组。
+            <button type="button" onclick="Execute('8')">Execute</button>
+            <span id="show08"></span>
+        </p>
+        <p>
+            9、找出array数组重复出现的元素。
+            <button type="button" onclick="Execute('9')">Execute</button>
+            <span><span id="show09"></span></span>
+        </p>
+        <p>
+            -------------------------------------------------------------------------------------------------------
+            -------------------------------------------------------------------------------------------------------
+        </p>
+        <p>
+            10、金额转换，将阿拉伯数字转换为大写。85426转换为大写后变为：捌万伍仟肆佰贰拾陆；3825转换为大写后变为：叁仟捌佰贰 拾伍
+        <p>
+            <input type="number" id="Num" placeholder="请输入11位以内整数">
+            <button type="button" onclick="Convert()">Convert</button>
+            <span id="show11"></span>
+        </p>
+
+        </p>
+    </h5>
+</div>
+
+
+<script src="js/Random1To20.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+
