@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        input {
+            width: 80%;
+            height: 40px;
+        }
+
+        div button {
+            width: 130px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" style="display: block" id="container">
+        <h4 style="color: #ff0909">
+            <em style="align-content: center">
+                现有字符串“Hello,ES6”,现完成如下操作：
+            </em>
+        </h4>
+        <h5 style="color: dodgerblue">
+            <p>
+                1、完成字符串反转，如字符串"hello"反转过后为“olleh"。
+                <button type="button" onclick="Execute('1')">Execute</button>
+                <span id="show01"></span>
+            </p>
+            <p>
+                2、将字符串全部转换为大写，并进行输出。
+                <button type="button" onclick="Execute('2')">Execute</button>
+                <span id="show02"></span>
+            </p>
+            <p>
+                3、截取第3个位置（包括第3个位置）至第7个位置之间的字符，不包括第7个位置的字符。
+                <button type="button" onclick="Execute('3')">Execute</button>
+                <span id="show03"></span>
+            </p>
+            <p>
+                4、将“ES6”替换为JavaScript并进行输出。
+                <button type="button" onclick="Execute('4')">Execute</button>
+                <span id="show04"></span>
+            </p>
+            <p>
+                5、获取第3~5之间的字符，并过行输出。
+                <button type="button" onclick="Execute('5')">Execute</button>
+                <span id="show05"></span>
+            </p>
+            <p>
+                6、获取“l”最后一次出现的位置。
+                <button type="button" onclick="Execute('6')">Execute</button>
+                <span id="show06"></span>
+            </p>
+            <p>
+                7、判断字符串是否以“He”开头。
+                <button type="button" onclick="Execute('7')">Execute</button>
+                <span id="show07"></span>
+            </p>
+            <p>
+                8、判断字符串是否以“ES6”结尾。
+                <button type="button" onclick="Execute('8')">Execute</button>
+                <span id="show08"></span>
+            </p>
+            <p>
+                9、使用repeat()方法将“Hello,ES6”重复3遍并进行输出。
+                <button type="button" onclick="Execute('9')">Execute</button>
+                <span id="show09"></span>
+            </p>
+            <p>
+                10、将“Hello,ES6”补全为12个长度，不够部分前边使用“*”进行填充。
+                <button type="button" onclick="Execute('10')">Execute</button>
+                <span id="show10"></span>
+            </p>
+            <p>
+                11、将“Hello,ES6”补全为12个长度，不够部分后边使用“@”进行填充。
+                <button type="button" onclick="Execute('11')">Execute</button>
+                <span id="show11"></span>
+            </p>
+            <p>
+                12、计算器
+                <button id="btn12" type="button" onclick="Execute('12')">Execute</button>
+            </p>
+        </h5>
+    </div>
+
+    <!--    简易计算器-->
+    <div class="container2" style="display: none;width:700px;height:300px; margin: auto;border: 1px rgba(157,161,160,0.68) solid" id="container2">
+        <div class="row" id="d1">
+            <div class="alert alert-dark" style="width:700px;height:50px;margin: auto">
+                  <strong> 计算器</strong>
+            </div>
+            <div class="alert alert-white" style="width:700px; height:50px;margin: auto;">
+                  First： <input type="text" id="first_Txt">
+            </div>
+            <div class="alert alert-white" style="width:700px;height:50px; margin: auto;">
+                  Last： <input type="text" id="last_Txt">
+            </div>
+            <br>
+            <div class="alert alert-white" style="width:700px; height:50px;size: 50px ; text-align: center">
+                <button type="button" class="btn btn-primary" onclick="calculate('1')">+</button>
+                <button type="button" class="btn btn-primary" onclick="calculate('2')">-</button>
+                <button type="button" class="btn btn-primary" onclick="calculate('3')">x</button>
+                <button type="button" class="btn btn-primary" onclick="calculate('4')">÷</button>
+            </div>
+
+        </div>
+        <div class="alert alert-white" style="width:700px; height:50px;margin: auto">
+            <div class="alert alert-dark">计算结果：
+                <span id="result">
+
+                            </span>
+            </div>
+        </div>
+
+    </div></div>
+
+    <!--    复杂类型计算器-->
+    <div class="container2" style="display: none;width: 465px;margin: auto" id="container3">
+        <div class="card bg-success text-white" style="height: 125px;width: 465px">
+            <div class="card-body" id="numInput"></div>
+        </div>
+        <div class="row" style="width: 465px;margin: auto">
+            <button class=" btn btn-success" id='1' onclick="Num('1')" style="width: 116px;">1</button>
+            <button class=" btn btn-success" id='2' onclick="Num('2')" style="width: 116px">2</button>
+            <button class=" btn btn-success" id='3' onclick="Num('3')" style="width: 116px">3</button>
+            <button class=" btn btn-success" id='+' onclick="Num('+')" style="width: 116px">+</button>
+        </div>
+        <div class="row" style="width: 465px;margin: auto">
+            <button class=" btn btn-success" id='4' onclick="Num('4')" style="width: 116px">4</button>
+            <button class=" btn btn-success" id='5' onclick="Num('5')" style="width: 116px">5</button>
+            <button class=" btn btn-success" id='6' onclick="Num('6')" style="width: 116px">6</button>
+            <button class=" btn btn-success" id='-' onclick="Num('-')" style="width: 116px">-</button>
+        </div>
+        <div class="row" style="width: 465px;margin: auto">
+            <button class=" btn btn-success" id='7' onclick="Num('7')" style="width: 116px">7</button>
+            <button class=" btn btn-success" id='8' onclick="Num('8')" style="width: 116px">8</button>
+            <button class=" btn btn-success" id='9' onclick="Num('9')" style="width: 116px">9</button>
+            <button class=" btn btn-success" id='*' onclick="Num('*')" style="width: 116px">*</button>
+        </div>
+        <div class="row" style="width: 465px;margin: auto">
+            <button class=" btn btn-success" id='C' onclick='Clear()' style="width: 116px">C</button>
+            <button class=" btn btn-success" id='0' onclick="Num('0')" style="width: 116px">0</button>
+            <button class=" btn btn-success" id='=' onclick='Eval()' style="width: 116px">=</button>
+            <button class=" btn btn-success" id='/' onclick="Num('/')" style="width: 116px">/</button>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/Calculator.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

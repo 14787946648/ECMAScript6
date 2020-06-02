@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+------------------------------------------------------------------------------------------------------------------------
+    <!--
+        1、按数值完成相减运算，并进行输出。
+        2、将这两个字符串转换为整数。
+    -->
+    <div>
+        <p>第一个数据：<input type="text" id="n1" value="10.4"></p>
+        <p>第二个数据：<input type="text" id="n2" value="4"></p>
+        <p>
+            <input type="button" value="完成相减运算" onclick="cal()">
+            <input type="button" value="转换为整数" onclick="toInteger()">
+        </p>
+        <p id="result"></p>
+
+    </div>
+------------------------------------------------------------------------------------------------------------------------
+    <!--
+        3、判断数值20和20.5是否为整数，并输出
+    -->
+    <div>
+        <p>第一个数据：<input type="text" id="n3" value="20"></p>
+        <p>第二个数据：<input type="text" id="n4" value="20.5"></p>
+        <input type="button" value="判断是否为整数" onclick="isint()">
+        <p id="result1"></p>
+    </div>
+
+------------------------------------------------------------------------------------------------------------------------
+    <!--
+        6、现有整数344，将其保留两位小数并进行输出。
+        7、将344按指数形式显示。
+    -->
+    <div>
+        <p>现有数据：<input type="text" id="n6" value="344"></p>
+        <input type="button" value="保留两位小数" onclick="tofixed()">
+        <input type="button" value="指数形式输出" onclick="zhi()">
+        <p id="result6"></p>
+    </div>
+------------------------------------------------------------------------------------------------------------------------
+    <!--
+        8、分别判断:true、25、25.4、25.0、null、'23'是否为整数，并进行输出。
+    -->
+    <div>
+        <p>现有数据：<input type="text" id="n8" value="true"></p>
+        <p>现有数据：<input type="text" id="n9" value="25"></p>
+        <p>现有数据：<input type="text" id="n10" value="25.4"></p>
+        <p>现有数据：<input type="text" id="n11" value="25.0"></p>
+        <p>现有数据：<input type="text" id="n12" value="null"></p>
+        <p>现有数据：<input type="text" id="n13" value="23"></p>
+        <input type="button" value="是否为整数" onclick="isint1()">
+        <p id="result8"></p>
+    </div>
+------------------------------------------------------------------------------------------------------------------------
+<script src="js/exercise.js">
+</script>
+</body>
+</html>
