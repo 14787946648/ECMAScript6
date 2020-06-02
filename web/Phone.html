@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/Phone.css" rel="stylesheet">
+
+    <style>
+        sbutton {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div>
+        <select id="sheng"  class="form-control">
+            <option value="">请选择类型...</option>
+            <option value="0">操作系统</option>
+            <option value="1">开发语言</option>
+            <option value="2">数据库</option>
+        </select>
+
+
+        <select id="shi"  class="form-control">
+            <option value="">请选择城市...</option>
+        </select>
+    </div>
+<!------------------------------------------------------------------------------------------------------------------------>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+            <button id="btn1" disabled="disabled"></button>
+            <button id="btn2" disabled="disabled"></button>
+            <div id="div4">
+                <!-----------------------------------------Dom写入区---------------------------------------------------->
+                <div id="show">
+
+                </div>
+                <!----------------------------------------------------------------------------------------------------->
+                <div class="card" id="c1">
+                    <div class="card-body" style="">
+                        <img src="img/img01.png" id="img_Switch">
+                        <input type="text" id="input_Text" placeholder="" />
+                        <img src="img/img03.png" id="img_Send">
+                    </div>
+                </div>
+
+            </div>
+            <button id="btn3" disabled="disabled"></button>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="js/Phone.js">
+
+</script>
+</html>

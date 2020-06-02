@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+<div class="jumbotron bg-secondary">
+    <h1 class="display-4 font-weight-bold text-white">XX学生管理系统</h1>
+    <span class="badge badge-pill badge-danger">@牛耳教育</span>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="stuId">学号</label>
+                        <input id="stuId" class="form-control" type="text" name="stuId" placeholder="学号" value=""  style="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="stuName">姓名</label>
+                        <input id="stuName" class="form-control" type="text" name="stuName" placeholder="姓名" value=""  style="">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthday">出生日期</label>
+                        <input type="datetime"
+                               class="form-control" name="birthday" id="birthday" value="" placeholder="1999-09-09"  style="">
+                    </div>
+                    <div class="form-group">
+                        <label for="score">成绩</label>
+                        <input id="score" class="form-control" type="text" name="score" placeholder="成绩" value=""  style="">
+
+                    </div>
+
+                    <button class="btn btn-primary float-right" type="button" id="save" onclick="save()">保存</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <table class="table table-hover table-bordered">
+                <thead class="bg-info">
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>出生日期</th>
+                    <th>成绩</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="stulist">
+
+                </tbody>
+            </table>
+            <nav>
+                <ul class="pagination float-right">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#">上一页 </a>
+                    </li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="page-item ">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">下一页</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</div>
+<div class="jumbotron text-center mt-3">
+    <input type="number" placeholder="请输入需要查找的学号" id="select">
+    <input type="button" value="查找" onclick="selectStu()">
+    <p id="output">
+    </p>
+</div>
+
+
+</body>
+<script src="js/Student.js"></script>
+<script src="js/StudentManager.js"></script>
+<script>
+    let student_ID, student_Name, student_Birthday, student_Score, stu_Array = [], flag1 = false, flag2 = false,
+        flag3 = false, flag4 = false, flag5 = false, a, flag7 = 1;
+    //初始表格值
+    StudentManager.init();
+
+    //更新事件
+    function update_Stu(index) {
+        if(flag7==1){
+            StudentManager.update(index);
+            StudentManager.sort(stu_Array);
+            StudentManager.delete(index);
+            flag7=2;
+        }else {
+            alert("请先将修改的数据保存！")
+        }
+    }
+
+    //保存事件
+    function save() {
+        StudentManager.saveShow();
+    }
+
+    //查找事件
+    function selectStu() {
+        if ((/[0-9]*/.test(document.querySelector("#select").value.trim()))) {
+            StudentManager.select(Number.parseInt(document.querySelector("#select").value.trim()));
+        }
+    }
+
+    //删除事件
+    function delete_Stu(index) {
+        if(confirm(`确定删除${index+1}号学生吗！`)){
+            StudentManager.sort(stu_Array);
+            StudentManager.delete(index);
+        }
+    }
+
+
+</script>
+</html>

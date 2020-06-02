@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            left: 300px;
+            top: 300px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/11.png" id="img">
+    <img src="img/12.png" id="img1">
+    <a href="#"></a>
+</div>
+</body>
+
+<script>
+    window.onload = function () {
+        let img = document.querySelector("#img");
+        let img1 = document.querySelector("#img1");
+        img.onmouseover = shakeFn;
+        img1.onmouseover = shakeFn;
+    }
+
+    function shakeFn() {
+        let _this = this;
+        shake(this, "left", function () {
+            shake(_this, "top")
+        });
+    }
+
+    //attr控制方向，obj控制的对象，fun继续执行的函数
+    function shake(obj, attr, fun) {
+        clearInterval(obj.timer);
+        let dis = [];
+        for (let i = 20; i > 0; i -= 2) {
+            dis.push(i, -i);
+        }
+        dis.push(0);
+        let now = 0;
+        obj.timer = setInterval(() => {
+            let space = Number.parseInt(getComputedStyle(obj)[attr]);
+            obj.style[attr] = space + dis[now] + "px";
+            now++;
+            if (now == dis.length) {
+                clearInterval(obj.timer);
+                // 短路效果
+                fun && fun();
+            }
+        }, 50);
+    }
+</script>
+</html>
